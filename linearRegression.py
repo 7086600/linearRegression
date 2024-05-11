@@ -45,3 +45,6 @@ print(calculate_all_error(1, 1, datapoints))
 print(calculate_all_error(1, -1, datapoints))
 # the line is y = -x + 1
 print(calculate_all_error(-1, 1, datapoints))
+
+possibleMS = [m/10 for m in range(-100, 101)]
+print(possibleMS)
