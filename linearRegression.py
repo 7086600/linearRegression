@@ -1,16 +1,13 @@
 # create linear regression function
-
 def getY(m, b, x):
     y = m*x + b
     return y
 
 # testing
-
 print(getY(1, 0, 7))
 print(getY(5, 10, 3))
 
 # calculate distance between the line and point
-
 def calculate_error(m, b, point):
     xPoint = point[0]
     yPoint = point[1]
@@ -46,5 +43,10 @@ print(calculate_all_error(1, -1, datapoints))
 # the line is y = -x + 1
 print(calculate_all_error(-1, 1, datapoints))
 
-possibleMS = [m/10 for m in range(-100, 101)]
+# create dataset of possible m values
+possibleMS = [m / 10 for m in range(-100, 101)]
 print(possibleMS)
+
+# create dataset of possible b values
+possibleBS = [b / 10 for b in range(-200, 201)]
+print(possibleBS)
