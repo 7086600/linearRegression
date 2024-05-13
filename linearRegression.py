@@ -45,8 +45,25 @@ print(calculate_all_error(-1, 1, datapoints))
 
 # create dataset of possible m values
 possibleMS = [m / 10 for m in range(-100, 101)]
-print(possibleMS)
+print(len(possibleMS))
 
 # create dataset of possible b values
 possibleBS = [b / 10 for b in range(-200, 201)]
-print(possibleBS)
+print(len(possibleBS))
+
+# find the smallest error
+datapoints = [(1, 2), (2, 0), (3, 4), (4, 4), (5, 3)]
+smallestError = float("inf")
+bestM = 0
+bestB = 0
+
+for m in possibleMS:
+    for b in possibleBS:
+        if calculate_all_error(m, b, datapoints) < smallestError:
+            smallestError = calculate_all_error(m, b, datapoints)
+            bestM = m
+            bestB = b
+
+# ok. the line that fits the datapoints best is: y = 0.4x + 1.6
+print(bestM, bestB, smallestError)
+
